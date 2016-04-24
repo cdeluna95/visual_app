@@ -2,6 +2,7 @@
 
 <%= simple_form_for @visual, :html => { :multipart => true } do |f| %>
   <%= f.select :category_id, @categories %>
+  <%= f.file_field :visual_img %>
   <%= f.input :title, label: "Visual Title" %>
   <%= f.input :description %>
   <%= f.input :creator %>

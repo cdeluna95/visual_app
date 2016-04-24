@@ -11,12 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160424002716) do
+ActiveRecord::Schema.define(version: 20160424030516) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "rating"
+    t.text     "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "visual_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -41,10 +50,14 @@ ActiveRecord::Schema.define(version: 20160424002716) do
     t.string   "title"
     t.text     "description"
     t.string   "creator"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.integer  "user_id"
     t.integer  "category_id"
+    t.string   "visual_img_file_name"
+    t.string   "visual_img_content_type"
+    t.integer  "visual_img_file_size"
+    t.datetime "visual_img_updated_at"
   end
 
 end

@@ -1,7 +1,24 @@
-<h2><%= @visual.title %></h2>
-<h3><%= @visual.creator %></h3>
-<h4>Category: <%= @visual.category.name %></h4>
-<p><%= @visual.description %></p>
+<div class="row">
+  <div class="col-md-4">
+    <%= image_tag @visual.visual_img.url(:visual_show), class: "visual-show" %>
+  </div>
+  
+  <div class="col-md-8">
+    <h2><%= @visual.title %></h2>
+    <h3><%= @visual.creator %></h3>
+    <p><%= @visual.description %></p>
+  </div>
+</div>
+  
+<div class="row">
+  <div class="col-md-4">
+    <!--- Reviews/ratings --->
+    <%= render @visual.reviews %>
+    <div>
+      <%= link_to 'Add Review', new_visual_review_path(@visual) %>
+    </div>
+  </div>
+</div>
 
 <%= link_to 'Back', root_path %>
 <% if user_signed_in? %>

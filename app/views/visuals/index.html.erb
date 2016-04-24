@@ -3,7 +3,13 @@
 <% if @visuals.count == 0 %>
   <h1>There are currently no visuals in this category.</h1>
 <% else %>
-  <% @visuals.each do |visual| %>
-    <h2><%= link_to visual.title, visual_path(visual) %></h2>
+  <div class="row">
+    <% @visuals.each do |visual| %>
+    <div class="col-md-3">
+      <a href="/visuals/<%= visual.id %>">
+        <%= image_tag visual.visual_img.url(:visual_index), class: "visual" %>
+      </a>
+    </div>
   <% end %>
+  </div>
 <% end %>

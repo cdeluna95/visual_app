@@ -49,7 +49,7 @@ class VisualsController < ApplicationController
     private
     
     def visual_params
-        params.require(:visual).permit(:title, :description, :creator, :category_id)
+        params.require(:visual).permit(:title, :description, :creator, :category_id, :visual_img)
     end
     
     def find_visual
