@@ -1,7 +1,20 @@
-<h1>Edit Review</h1>
+<div class="col-md-6 col-md-offset-3">
+  <div class="new-visual-form">
+    <h1>Edit Review</h1>
+    
+    <%= simple_form_for([@visual, @review]) do |f| %>
+      <div id="rating-form">
+        <label>Rating: </label>
+      </div>
+      <%= f.input :comment %>
+      <%= f.button :submit, :class => 'btn-custom' %>
+    <% end %>
+  </div>
+</div>
 
-<%= simple_form_for([@visual, @review]) do |f| %>
-  <%= f.input :rating %>
-  <%= f.input :comment %>
-  <%= f.button :submit %>
-<% end %>
+<script>
+  $('#rating-form').raty({
+    path: '/assets/'
+    scoreName: 'review[rating]'
+  });
+</script>

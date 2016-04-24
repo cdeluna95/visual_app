@@ -1,10 +1,14 @@
-<h2>Edit Visual</h2>
-
-<%= simple_form_for @visual, :html => { :multipart => true } do |f| %>
-  <%= f.select :category_id, @categories %>
-  <%= f.file_field :visual_img %>
-  <%= f.input :title, label: "Visual Title" %>
-  <%= f.input :description %>
-  <%= f.input :creator %>
-  <%= f.button :submit %>
-<% end %>
+<div class="col-md-6 col-md-offset-3">
+  <div class="edit-visual-form">
+    <h2>Edit Visual</h2>
+    
+    <%= simple_form_for @visual, :html => { :multipart => true } do |f| %>
+      <%= f.select :category_id, @categories %>
+      <%= f.file_field :visual_img %>
+      <%= f.input :title, label: "Visual Title" %>
+      <%= f.input :description %>
+      <%= f.input :creator %>
+      <%= f.button :submit, :class => 'btn-custom2' %>
+    <% end %>
+  </div>
+</div>

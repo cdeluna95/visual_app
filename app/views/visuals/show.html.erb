@@ -4,26 +4,56 @@
   </div>
   
   <div class="col-md-8">
-    <h2><%= @visual.title %></h2>
-    <h3><%= @visual.creator %></h3>
-    <p><%= @visual.description %></p>
+    <div class="visual-info">
+      <h2 class="visual-title"><%= @visual.title %></h2>
+      <h3 class="visual-creator"><span>from</span> <%= @visual.creator %></h3>
+      <h2 class="avg-rating">Average Rating</h2>
+      <div class="average-review-rating" data-score=<%= @average_review %>></div>
+      <span class="number-of-reviews">Based on <%= @visual.reviews.count %> review(s)</span>
+      <p class="visual-desc"><%= @visual.description %></p>
+    </div>
   </div>
 </div>
   
 <div class="row">
   <div class="col-md-4">
-    <!--- Reviews/ratings --->
-    <%= render @visual.reviews %>
-    <div>
-      <%= link_to 'Add Review', new_visual_review_path(@visual) %>
+    <div class="reviews">
+      <h1>Reviews</h1>
+      <%= render @visual.reviews %>
+      <div>
+        <%= link_to 'Add Review', new_visual_review_path(@visual), class: "btn btn-custom" %>
+      </div>
     </div>
   </div>
 </div>
 
-<%= link_to 'Back', root_path %>
-<% if user_signed_in? %>
-  <% if @visual.user_id == current_user.id %>
-    <%= link_to 'Edit', edit_visual_path(@visual) %>
-    <%= link_to 'Delete', visual_path(@visual), method: :delete, data: { confirm: "Are you sure?" } %>
+<br>
+<div class="links btn-group">
+  <%= link_to 'Back', root_path, class: "btn btn-custom" %>
+  <% if user_signed_in? %>
+    <% if @visual.user_id == current_user.id %>
+      <%= link_to 'Edit', edit_visual_path(@visual), class: "btn btn-custom" %>
+      <%= link_to 'Delete', visual_path(@visual), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-custom" %>
+    <% end %>
   <% end %>
-<% end %>
+</div>
+
+<script>
+  $('.review-rating').raty({
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    },
+    path: '/assets/'
+  });
+</script>
+
+<script>
+  $('.average-review-rating').raty({
+    readOnly: true,
+    path: '/assets/',
+    score: function() {
+      return $(this).attr('data-score')
+    }
+  });
+</script>
