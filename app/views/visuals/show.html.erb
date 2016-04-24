@@ -1,0 +1,11 @@
+<h2><%= @visual.title %></h2>
+<h3><%= @visual.creator %></h3>
+<p><%= @visual.description %></p>
+
+<%= link_to 'Back', root_path %>
+<% if user_signed_in? %>
+  <% if @visual.user_id == current_user.id %>
+    <%= link_to 'Edit', edit_visual_path(@visual) %>
+    <%= link_to 'Delete', visual_path(@visual), method: :delete, data: { confirm: "Are you sure?" } %>
+  <% end %>
+<% end %>
