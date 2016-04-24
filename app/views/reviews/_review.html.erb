@@ -3,7 +3,7 @@
   <p class="review-comment"><%= review.comment %></p>
   
   <% if user_signed_in? %>
-    <% if review.user_id == current_user_id %>
+    <% if review.user_id == current_user.id %>
       <div class="links btn-group">
         <%= link_to 'Edit', edit_visual_review_path(review.visual, review), class: "btn btn-custom" %>
         <%= link_to 'Delete', visual_review_path(review.visual, review), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-custom" %>

@@ -27,7 +27,6 @@
 	padding: 1.5em 1.25em;
 }
 
-
 /* General styles */
 
 body {
@@ -41,11 +40,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p.alert, p.notice {
-	margin: 0;
+	margin-left: 30px;
 }
 
-
-/* Navbar/navigation styles */
+/* Navbar and navigation styles */
 
 .navbar {
 	font-family: 'Ubuntu', sans-serif;
@@ -90,8 +88,7 @@ p.alert, p.notice {
 	color: #fff;
 }
 
-
-/* Button/link styles */
+/* Button and link styles */
 
 .btn-custom {
 	color: darken(#f1c40f, 5%);
@@ -145,15 +142,15 @@ p.alert, p.notice {
 /* Visual styles */
 
 .visual {
-	height: 350px;
-	width: 250px;
+	height: 250px;
+	width: 300px;
 	margin-bottom: 40px;
 	@include background-tile;
 }
 
 .visual-show {
-	height: 475px;
-	width: 325px;
+	height: 300px;
+	width: 350px;
 	@include background-tile;
 }
 
@@ -194,8 +191,7 @@ p.alert, p.notice {
 
 }
 
-
-/* current-category styles */
+/* Current category styles */
 
 .current-category {
 	margin-bottom: 40px;
@@ -233,7 +229,7 @@ p.alert, p.notice {
 
 }
 
-/* New Visual Form styles */
+/* New visual form styles */
 
 .new-visual-form {
 	@include background-tile;
@@ -252,8 +248,7 @@ p.alert, p.notice {
 
 }
 
-
-/* Edit Visual Form styles */
+/* Edit visual form styles */
 
 .edit-visual-form {
 
@@ -273,7 +268,7 @@ p.alert, p.notice {
 
 }
 
-/* New/Edit review form styles */
+/* New and edit review form styles */
 
 .new-review-form, .edit-review-form {
 	@include background-tile;
@@ -293,8 +288,7 @@ p.alert, p.notice {
 
 }
 
-
-/* Signup/Login form styles */
+/* Signup and login form styles */
 
 .signup-form {
 	@include background-tile;
