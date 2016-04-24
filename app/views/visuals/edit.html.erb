@@ -1,3 +1,9 @@
 <h2>Edit Visual</h2>
 
-<%= render 'form' %>
+<%= simple_form_for @visual, :html => { :multipart => true } do |f| %>
+  <%= f.select :category_id, @categories %>
+  <%= f.input :title, label: "Visual Title" %>
+  <%= f.input :description %>
+  <%= f.input :creator %>
+  <%= f.button :submit %>
+<% end %>

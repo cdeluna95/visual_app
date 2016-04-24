@@ -1,3 +1,9 @@
-<% @visuals.each do |visual| %>
-  <h2><%= link_to visual.title, visual_path(visual) %></h2>
+<h1 class="current-category"><%= params[:category] %></h1>
+
+<% if @visuals.count == 0 %>
+  <h1>There are currently no visuals in this category.</h1>
+<% else %>
+  <% @visuals.each do |visual| %>
+    <h2><%= link_to visual.title, visual_path(visual) %></h2>
+  <% end %>
 <% end %>
