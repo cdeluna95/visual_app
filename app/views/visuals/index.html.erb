@@ -5,7 +5,7 @@
 <% else %>
   <div class="row">
     <% @visuals.each do |visual| %>
-    <div class="col-md-3">
+    <div class="col-md-4">
       <a href="/visuals/<%= visual.id %>">
         <%= image_tag visual.visual_img.url(:visual_index), class: "visual" %>
       </a>

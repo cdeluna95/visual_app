@@ -40,7 +40,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p.alert, p.notice {
-	margin-left: 30px;
+	text-align: center;
 }
 
 /* Navbar and navigation styles */
@@ -143,18 +143,19 @@ p.alert, p.notice {
 
 .visual {
 	height: 250px;
-	width: 300px;
+	width: 357px;
 	margin-bottom: 40px;
 	@include background-tile;
 }
 
 .visual-show {
 	height: 300px;
-	width: 350px;
+	width: 457px;
 	@include background-tile;
 }
 
 .visual-info {
+	margin-left: 107px;
 	@include background-tile;
 
 	.visual-title {
